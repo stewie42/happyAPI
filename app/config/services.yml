@@ -1,0 +1,29 @@
+parameters:
+
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    public: false
+
+  app.listener.authentication_success_response:
+        class: AppBundle\EventListener\AuthenticationSuccessListener
+        tags:
+            - { name: kernel.event_listener, event: lexik_jwt_authentication.on_authentication_success, method: onAuthenticationSuccessResponse }
+
+  AppBundle\Action\:
+      resource: '../../src/AppBundle/Action'
+      public: true
+      tags: ['controller.service_arguments']
+
+  AppBundle\:
+      resource: '../../src/AppBundle/{EventSubscriber}'
+
+  app.registration_confirm:
+        class: UserBundle\EventListener\RegistrationConfirmListener
+        arguments: ['@router']
+        tags:
+            - { name: kernel.event_subscriber }
+  UserBundle\:
+    resource: '../../src/UserBundle/{EventListener}'
+

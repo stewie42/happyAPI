@@ -1,0 +1,501 @@
+{
+    "@context": {
+        "@vocab": "http://0.0.0.0:8084/app_dev.php/docs.jsonld#",
+        "hydra": "http://www.w3.org/ns/hydra/core#",
+        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "xmls": "http://www.w3.org/2001/XMLSchema#",
+        "owl": "http://www.w3.org/2002/07/owl#",
+        "domain": {
+            "@id": "rdfs:domain",
+            "@type": "@id"
+        },
+        "range": {
+            "@id": "rdfs:range",
+            "@type": "@id"
+        },
+        "subClassOf": {
+            "@id": "rdfs:subClassOf",
+            "@type": "@id"
+        },
+        "expects": {
+            "@id": "hydra:expects",
+            "@type": "@id"
+        },
+        "returns": {
+            "@id": "hydra:returns",
+            "@type": "@id"
+        }
+    },
+    "@id": "/app_dev.php/docs.jsonld",
+    "hydra:entrypoint": "/app_dev.php/",
+    "hydra:supportedClass": [
+        {
+            "@id": "http://schema.org/Person",
+            "@type": "hydra:Class",
+            "rdfs:label": "User",
+            "hydra:title": "User",
+            "hydra:supportedProperty": [
+                {
+                    "@type": "hydra:SupportedProperty",
+                    "hydra:property": {
+                        "@id": "http://schema.org/email",
+                        "@type": "rdf:Property",
+                        "rdfs:label": "email",
+                        "domain": "http://schema.org/Person",
+                        "range": "xmls:string"
+                    },
+                    "hydra:title": "email",
+                    "hydra:required": false,
+                    "hydra:readable": true,
+                    "hydra:writable": true
+                },
+                {
+                    "@type": "hydra:SupportedProperty",
+                    "hydra:property": {
+                        "@id": "#User/username",
+                        "@type": "rdf:Property",
+                        "rdfs:label": "username",
+                        "domain": "http://schema.org/Person",
+                        "range": "xmls:string"
+                    },
+                    "hydra:title": "username",
+                    "hydra:required": false,
+                    "hydra:readable": true,
+                    "hydra:writable": true
+                },
+                {
+                    "@type": "hydra:SupportedProperty",
+                    "hydra:property": {
+                        "@id": "http://schema.org/familyName",
+                        "@type": "rdf:Property",
+                        "rdfs:label": "familyName",
+                        "domain": "http://schema.org/Person",
+                        "range": "xmls:string"
+                    },
+                    "hydra:title": "familyName",
+                    "hydra:required": false,
+                    "hydra:readable": true,
+                    "hydra:writable": true,
+                    "hydra:description": "Family name. In the U.S., the last name of an User. This can be used along with givenName instead of the name property"
+                },
+                {
+                    "@type": "hydra:SupportedProperty",
+                    "hydra:property": {
+                        "@id": "http://schema.org/givenName",
+                        "@type": "rdf:Property",
+                        "rdfs:label": "givenName",
+                        "domain": "http://schema.org/Person",
+                        "range": "xmls:string"
+                    },
+                    "hydra:title": "givenName",
+                    "hydra:required": false,
+                    "hydra:readable": true,
+                    "hydra:writable": true,
+                    "hydra:description": "Given name. In the U.S., the first name of a User. This can be used along with familyName instead of the name property"
+                },
+                {
+                    "@type": "hydra:SupportedProperty",
+                    "hydra:property": {
+                        "@id": "http://schema.org/gender",
+                        "@type": "rdf:Property",
+                        "rdfs:label": "gender",
+                        "domain": "http://schema.org/Person",
+                        "range": "xmls:string"
+                    },
+                    "hydra:title": "gender",
+                    "hydra:required": false,
+                    "hydra:readable": true,
+                    "hydra:writable": true,
+                    "hydra:description": "Gender of the person. While http://schema.org/Male and http://schema.org/Female may be used, text strings are also acceptable for people who do not identify as a binary gender"
+                },
+                {
+                    "@type": "hydra:SupportedProperty",
+                    "hydra:property": {
+                        "@id": "http://schema.org/birthDate",
+                        "@type": "rdf:Property",
+                        "rdfs:label": "birthDate",
+                        "domain": "http://schema.org/Person",
+                        "range": "xmls:dateTime"
+                    },
+                    "hydra:title": "birthDate",
+                    "hydra:required": false,
+                    "hydra:readable": true,
+                    "hydra:writable": true,
+                    "hydra:description": "Date of birth"
+                },
+                {
+                    "@type": "hydra:SupportedProperty",
+                    "hydra:property": {
+                        "@id": "http://schema.org/telephone",
+                        "@type": "rdf:Property",
+                        "rdfs:label": "telephone",
+                        "domain": "http://schema.org/Person",
+                        "range": "xmls:string"
+                    },
+                    "hydra:title": "telephone",
+                    "hydra:required": false,
+                    "hydra:readable": true,
+                    "hydra:writable": true,
+                    "hydra:description": "The telephone number"
+                },
+                {
+                    "@type": "hydra:SupportedProperty",
+                    "hydra:property": {
+                        "@id": "http://schema.org/jobTitle",
+                        "@type": "rdf:Property",
+                        "rdfs:label": "jobTitle",
+                        "domain": "http://schema.org/Person",
+                        "range": "xmls:string"
+                    },
+                    "hydra:title": "jobTitle",
+                    "hydra:required": false,
+                    "hydra:readable": true,
+                    "hydra:writable": true,
+                    "hydra:description": "The job title of the person (for example, Financial Manager)"
+                },
+                {
+                    "@type": "hydra:SupportedProperty",
+                    "hydra:property": {
+                        "@id": "#User/department",
+                        "@type": "hydra:Link",
+                        "rdfs:label": "department",
+                        "domain": "http://schema.org/Person",
+                        "range": "#Department"
+                    },
+                    "hydra:title": "department",
+                    "hydra:required": false,
+                    "hydra:readable": true,
+                    "hydra:writable": true,
+                    "hydra:description": "in welcher der Mitarbeiter arbeitet"
+                }
+            ],
+            "hydra:supportedOperation": [
+                {
+                    "@type": "hydra:Operation",
+                    "hydra:method": "GET",
+                    "hydra:title": "Retrieves User resource.",
+                    "rdfs:label": "Retrieves User resource.",
+                    "returns": "http://schema.org/Person"
+                },
+                {
+                    "@type": "hydra:Operation",
+                    "hydra:method": "GET",
+                    "hydra:title": "Retrieves User resource.",
+                    "rdfs:label": "Retrieves User resource.",
+                    "returns": "http://schema.org/Person"
+                }
+            ]
+        },
+        {
+            "@id": "#Department",
+            "@type": "hydra:Class",
+            "rdfs:label": "Department",
+            "hydra:title": "Department",
+            "hydra:supportedProperty": [
+                {
+                    "@type": "hydra:SupportedProperty",
+                    "hydra:property": {
+                        "@id": "#Department/id",
+                        "@type": "rdf:Property",
+                        "rdfs:label": "id",
+                        "domain": "#Department",
+                        "range": "xmls:integer"
+                    },
+                    "hydra:title": "id",
+                    "hydra:required": false,
+                    "hydra:readable": true,
+                    "hydra:writable": true
+                },
+                {
+                    "@type": "hydra:SupportedProperty",
+                    "hydra:property": {
+                        "@id": "#Department/name",
+                        "@type": "rdf:Property",
+                        "rdfs:label": "name",
+                        "domain": "#Department",
+                        "range": "xmls:string"
+                    },
+                    "hydra:title": "name",
+                    "hydra:required": false,
+                    "hydra:readable": true,
+                    "hydra:writable": true
+                }
+            ],
+            "hydra:supportedOperation": [
+                {
+                    "@type": "hydra:Operation",
+                    "hydra:method": "GET",
+                    "hydra:title": "Retrieves Department resource.",
+                    "rdfs:label": "Retrieves Department resource.",
+                    "returns": "#Department"
+                },
+                {
+                    "@type": "hydra:ReplaceResourceOperation",
+                    "expects": "#Department",
+                    "hydra:method": "PUT",
+                    "hydra:title": "Replaces the Department resource.",
+                    "rdfs:label": "Replaces the Department resource.",
+                    "returns": "#Department"
+                },
+                {
+                    "@type": "hydra:Operation",
+                    "hydra:method": "DELETE",
+                    "hydra:title": "Deletes the Department resource.",
+                    "rdfs:label": "Deletes the Department resource.",
+                    "returns": "owl:Nothing"
+                }
+            ],
+            "hydra:description": ""
+        },
+        {
+            "@id": "#Mood",
+            "@type": "hydra:Class",
+            "rdfs:label": "Mood",
+            "hydra:title": "Mood",
+            "hydra:supportedProperty": [
+                {
+                    "@type": "hydra:SupportedProperty",
+                    "hydra:property": {
+                        "@id": "#Mood/mood",
+                        "@type": "rdf:Property",
+                        "rdfs:label": "mood",
+                        "domain": "#Mood",
+                        "range": "xmls:integer"
+                    },
+                    "hydra:title": "mood",
+                    "hydra:required": false,
+                    "hydra:readable": true,
+                    "hydra:writable": true
+                },
+                {
+                    "@type": "hydra:SupportedProperty",
+                    "hydra:property": {
+                        "@id": "#Mood/explanation",
+                        "@type": "rdf:Property",
+                        "rdfs:label": "explanation",
+                        "domain": "#Mood",
+                        "range": "xmls:string"
+                    },
+                    "hydra:title": "explanation",
+                    "hydra:required": false,
+                    "hydra:readable": true,
+                    "hydra:writable": true
+                },
+                {
+                    "@type": "hydra:SupportedProperty",
+                    "hydra:property": {
+                        "@id": "#Mood/postedAt",
+                        "@type": "rdf:Property",
+                        "rdfs:label": "postedAt",
+                        "domain": "#Mood",
+                        "range": "xmls:dateTime"
+                    },
+                    "hydra:title": "postedAt",
+                    "hydra:required": false,
+                    "hydra:readable": true,
+                    "hydra:writable": true
+                },
+                {
+                    "@type": "hydra:SupportedProperty",
+                    "hydra:property": {
+                        "@id": "#Mood/user",
+                        "@type": "hydra:Link",
+                        "rdfs:label": "user",
+                        "domain": "#Mood",
+                        "range": "http://schema.org/Person"
+                    },
+                    "hydra:title": "user",
+                    "hydra:required": true,
+                    "hydra:readable": true,
+                    "hydra:writable": true
+                }
+            ],
+            "hydra:supportedOperation": [
+                {
+                    "@type": "hydra:Operation",
+                    "hydra:method": "GET",
+                    "hydra:title": "Retrieves Mood resource.",
+                    "rdfs:label": "Retrieves Mood resource.",
+                    "returns": "#Mood"
+                },
+                {
+                    "@type": "hydra:ReplaceResourceOperation",
+                    "expects": "#Mood",
+                    "hydra:method": "PUT",
+                    "hydra:title": "Replaces the Mood resource.",
+                    "rdfs:label": "Replaces the Mood resource.",
+                    "returns": "#Mood"
+                },
+                {
+                    "@type": "hydra:Operation",
+                    "hydra:method": "DELETE",
+                    "hydra:title": "Deletes the Mood resource.",
+                    "rdfs:label": "Deletes the Mood resource.",
+                    "returns": "owl:Nothing"
+                }
+            ],
+            "hydra:description": "A mood."
+        },
+        {
+            "@id": "#Entrypoint",
+            "@type": "hydra:Class",
+            "hydra:title": "The API entrypoint",
+            "hydra:supportedProperty": [
+                {
+                    "@type": "hydra:SupportedProperty",
+                    "hydra:property": {
+                        "@id": "#Entrypoint/user",
+                        "@type": "hydra:Link",
+                        "domain": "#Entrypoint",
+                        "rdfs:label": "The collection of User resources",
+                        "range": "hydra:PagedCollection",
+                        "hydra:supportedOperation": [
+                            {
+                                "@type": "hydra:Operation",
+                                "hydra:method": "GET",
+                                "hydra:title": "Retrieves the collection of User resources.",
+                                "rdfs:label": "Retrieves the collection of User resources.",
+                                "returns": "hydra:PagedCollection"
+                            },
+                            {
+                                "@type": "hydra:CreateResourceOperation",
+                                "expects": "http://schema.org/Person",
+                                "hydra:method": "POST",
+                                "hydra:title": "Creates a User resource.",
+                                "rdfs:label": "Creates a User resource.",
+                                "returns": "http://schema.org/Person"
+                            }
+                        ]
+                    },
+                    "hydra:title": "The collection of User resources",
+                    "hydra:readable": true,
+                    "hydra:writable": false
+                },
+                {
+                    "@type": "hydra:SupportedProperty",
+                    "hydra:property": {
+                        "@id": "#Entrypoint/department",
+                        "@type": "hydra:Link",
+                        "domain": "#Entrypoint",
+                        "rdfs:label": "The collection of Department resources",
+                        "range": "hydra:PagedCollection",
+                        "hydra:supportedOperation": [
+                            {
+                                "@type": "hydra:Operation",
+                                "hydra:method": "GET",
+                                "hydra:title": "Retrieves the collection of Department resources.",
+                                "rdfs:label": "Retrieves the collection of Department resources.",
+                                "returns": "hydra:PagedCollection"
+                            },
+                            {
+                                "@type": "hydra:CreateResourceOperation",
+                                "expects": "#Department",
+                                "hydra:method": "POST",
+                                "hydra:title": "Creates a Department resource.",
+                                "rdfs:label": "Creates a Department resource.",
+                                "returns": "#Department"
+                            }
+                        ]
+                    },
+                    "hydra:title": "The collection of Department resources",
+                    "hydra:readable": true,
+                    "hydra:writable": false
+                },
+                {
+                    "@type": "hydra:SupportedProperty",
+                    "hydra:property": {
+                        "@id": "#Entrypoint/mood",
+                        "@type": "hydra:Link",
+                        "domain": "#Entrypoint",
+                        "rdfs:label": "The collection of Mood resources",
+                        "range": "hydra:PagedCollection",
+                        "hydra:supportedOperation": [
+                            {
+                                "@type": "hydra:Operation",
+                                "hydra:method": "GET",
+                                "hydra:title": "Retrieves the collection of Mood resources.",
+                                "rdfs:label": "Retrieves the collection of Mood resources.",
+                                "returns": "hydra:PagedCollection"
+                            },
+                            {
+                                "@type": "hydra:CreateResourceOperation",
+                                "expects": "#Mood",
+                                "hydra:method": "POST",
+                                "hydra:title": "Creates a Mood resource.",
+                                "rdfs:label": "Creates a Mood resource.",
+                                "returns": "#Mood"
+                            }
+                        ]
+                    },
+                    "hydra:title": "The collection of Mood resources",
+                    "hydra:readable": true,
+                    "hydra:writable": false
+                }
+            ],
+            "hydra:supportedOperation": {
+                "@type": "hydra:Operation",
+                "hydra:method": "GET",
+                "rdfs:label": "The API entrypoint.",
+                "returns": "#EntryPoint"
+            }
+        },
+        {
+            "@id": "#ConstraintViolation",
+            "@type": "hydra:Class",
+            "hydra:title": "A constraint violation",
+            "hydra:supportedProperty": [
+                {
+                    "@type": "hydra:SupportedProperty",
+                    "hydra:property": {
+                        "@id": "#ConstraintViolation/propertyPath",
+                        "@type": "rdf:Property",
+                        "rdfs:label": "propertyPath",
+                        "domain": "#ConstraintViolation",
+                        "range": "xmls:string"
+                    },
+                    "hydra:title": "propertyPath",
+                    "hydra:description": "The property path of the violation",
+                    "hydra:readable": true,
+                    "hydra:writable": false
+                },
+                {
+                    "@type": "hydra:SupportedProperty",
+                    "hydra:property": {
+                        "@id": "#ConstraintViolation/message",
+                        "@type": "rdf:Property",
+                        "rdfs:label": "message",
+                        "domain": "#ConstraintViolation",
+                        "range": "xmls:string"
+                    },
+                    "hydra:title": "message",
+                    "hydra:description": "The message associated with the violation",
+                    "hydra:readable": true,
+                    "hydra:writable": false
+                }
+            ]
+        },
+        {
+            "@id": "#ConstraintViolationList",
+            "@type": "hydra:Class",
+            "subClassOf": "hydra:Error",
+            "hydra:title": "A constraint violation list",
+            "hydra:supportedProperty": [
+                {
+                    "@type": "hydra:SupportedProperty",
+                    "hydra:property": {
+                        "@id": "#ConstraintViolationList/violations",
+                        "@type": "rdf:Property",
+                        "rdfs:label": "violations",
+                        "domain": "#ConstraintViolationList",
+                        "range": "#ConstraintViolation"
+                    },
+                    "hydra:title": "violations",
+                    "hydra:description": "The violations",
+                    "hydra:readable": true,
+                    "hydra:writable": false
+                }
+            ]
+        }
+    ]
+}
