@@ -35,7 +35,7 @@ security:
             pattern: ^/api
             provider: fos_userbundle
             stateless: true
-            anonymous: ~
+            anonymous: true
             guard:
                 authenticators:
                     - lexik_jwt_authentication.jwt_token_authenticator
