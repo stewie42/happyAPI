@@ -1,0 +1,56 @@
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title> Vote Your Mood </title>
+	<link rel="icon" type="image/png" href="images/smiley_3.png" />
+	<link rel="stylesheet" href="css/style.css">
+    <script src="js/moodAPI.js"></script>
+    <script src="js/client.js"></script>
+</head>
+<body>
+	<header>
+		<h1> Vote Your Mood </h1>
+	</header>
+
+<div id="greeting">
+	Hallo Max, wie geht es dir heute?
+</div>
+<div id="containerTop">
+	<div id="container5">
+		<div id="container4">
+			<div id="container3">
+				<div id="container2">
+					<div id="container1">
+						<div id="col1" onclick="setFocus(this)">
+							<img src="images/smiley_1.png"/>
+						</div>
+						<div id="col2" onclick="setFocus(this)">
+							<img src="images/smiley_2.png"/>
+						</div>
+						<div id="col3" onclick="setFocus(this)">
+							<img src="images/smiley_3.png"/>
+						</div>
+						<div id="col4" onclick="setFocus(this)">
+							<img src="images/smiley_4.png"/>
+						</div>
+						<div id="col5" onclick="setFocus(this)">
+							<img src="images/smiley_5.png"/>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="textDiv">
+ Gibt es einen besonderen Grund für die Bewertung?
+ <textarea id="exp" rows="6" cols="5" maxlength="300"> </textarea>
+<div id="message">
+</div>
+ <button id="gobtn" type="button"> Go! </button>
+ <button id="deletebtn" type="button" > Mood entfernen </button>
+ <button id="updatebtn" class="hdbtn" type="button"> Ja </button>
+ <button id="rejectbtn" class="hdbtn" type="button"> Nein </button>
+</div>
+</body>
+</html>
